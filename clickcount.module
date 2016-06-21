@@ -37,7 +37,7 @@ function clickcount_node_view(&$build, $entity, $display, $view_mode) {
 
     // Create a link / Add a button
     $build['clickcount_link'] = [
-        '#title' => t('Postuler'),
+        '#title' => t('Apply'),
         '#type' => 'link',
         '#url' => Url::fromRoute('clickcount.count', array('job_id' => $entity->id())),
         '#attributes' => array(

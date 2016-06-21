@@ -1,0 +1,14 @@
+{
+  "name": "drupal/clickcount",
+  "type": "drupal-module",
+  "description": "Count clicks on a JS button",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/clickcount",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "http://drupal.org/project/issues/clickcount",
+    "source": "http://cgit.drupalcode.org/clickcount"
+  },
+  "require": { }
+}

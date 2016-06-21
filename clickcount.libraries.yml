@@ -1,0 +1,13 @@
+clickcount.ajax:
+  version: 1.0
+  js:
+    js/ajax.js: {}
+  dependencies:
+     - core/drupal.ajax
+
+clickcount.job:
+  version: 1.0
+  js:
+    js/hideinfos_showbutton.js: {}
+  dependencies:
+     - core/drupal.jquery

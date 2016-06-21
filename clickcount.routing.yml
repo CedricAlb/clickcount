@@ -1,0 +1,15 @@
+clickcount.report:
+  path: 'admin/clickcount/report'
+  defaults:
+    _controller: '\Drupal\clickcount\Controller\ClickcountReportController::report'
+    _title: 'Statistics of applications'
+  requirements:
+    _permission: 'access site reports'
+
+clickcount.count:
+  path: 'admin/clickcount/count/{job_id}'
+  defaults:
+    _controller: '\Drupal\clickcount\Controller\ClickcountAjaxController::countThisClickCallback'
+    job_id: '0'
+  requirements:
+    _permission: 'access content'

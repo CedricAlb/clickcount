@@ -1,0 +1,7 @@
+clickcount.report:
+  title: 'Statistics of applications'
+  description: 'Monthly click count report for the "Apply" button on job pages'
+  route_name: clickcount.report
+  expanded: TRUE
+  parent: system.admin_reports
+  weight: 100

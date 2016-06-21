@@ -1,0 +1,51 @@
+<?php
+
+/**
+ * @file
+ * Contains clickcount.module..
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Url;
+
+/**
+ * Implements hook_help().
+ */
+function clickcount_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the clickcount module.
+    case 'help.page.clickcount':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Count clicks on a JS button') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_view().
+ */
+function clickcount_node_view(&$build, $entity, $display, $view_mode) {
+
+  if ($display->getComponent('field_section_contact')) {
+
+    // Attach JavaScript libraries
+    $build['#attached']['library'][] = 'clickcount/clickcount.job';
+    $build['#attached']['library'][] = 'clickcount/clickcount.ajax';
+
+    // Create a link / Add a button
+    $build['clickcount_link'] = [
+        '#title' => t('Postuler'),
+        '#type' => 'link',
+        '#url' => Url::fromRoute('clickcount.count', array('job_id' => $entity->id())),
+        '#attributes' => array(
+            'id' => 'clickcount',
+            'class' => array('use-ajax', 'button', 'bleu', 'big'),
+            'style' => 'display:none',
+            ),
+        '#weight' => 100,
+    ];
+  }
+}
